@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DUR KHOJ | Home</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+ <script>
+    if (localStorage.getItem('theme') === 'dark') {
+        document.body.classList.add('dark-mode');
+    }
+</script>
+<nav>
+    <a href="index.html" class="logo">
+        <img src="logo.jpg" alt="Logo"> DUR<span>KHOJ</span>
+    </a>
+    <div class="nav-right-section">
+        <button id="theme-toggle">🌙</button>
+        
+        <div class="menu-icon" id="mobile-menu-btn">
+            <i class="fas fa-bars" id="bar-icon"></i>
+            <i class="fas fa-times" id="close-icon" style="display:none;"></i>
+        </div>
+
+        <ul class="nav-links" id="nav-menu">
+    <li><a href="index.html">Home</a></li>
+    <li><a href="browse.html">Browse</a></li>
+    <li><a href="about.html">About</a></li>
+    
+    <li id="nav-auth-section">
+        <a href="signin.html" id="signin-link">Sign In</a>
+    </li>
+    
+    <li id="user-profile-section" class="nav-profile-container" style="display: none;">
+        <img src="profile-placeholder.png" alt="Profile" class="nav-profile-img" id="nav-avatar">
+        <div class="profile-dropdown" id="profile-dropdown">
+            <p class="user-name-display">Afan Ali Khan</p>
+            <hr>
+            <a href="#" id="logout-btn"><i class="fas fa-sign-out-alt"></i> Logout</a>
+        </div>
+    </li>
+</ul>
+    </div>
+</nav>
+
+<section class="hero-section">
+    <div class="content-wrapper centered-content">
+        <h1>Find Your Home in <br><span id="typing-text">Singur.</span></h1>
+        <p class="hero-subtitle">The smartest way to rent and buy property in the Chitral Valley.</p>
+        
+        <div class="hero-cta">
+            <a href="browse.html" class="cta-button">Start Exploring</a>
+        </div>
+
+        <div class="journey-container">
+            <h3>Follow Our Journey</h3>
+            <div class="social-icons">
+                <a href="#"><i class="fab fa-facebook"></i></a>
+                <a href="#"><i class="fab fa-tiktok"></i></a>
+                <a href="#"><i class="fab fa-youtube"></i></a>
+            </div>
+            <p class="developer-tag">Developed by <a href="about.html">Afan Ali</a></p>
+        </div>
+    </div>
+</section>
+
+<main class="content-wrapper">
+    </main>
+
+<footer class="main-footer">
+    <div class="footer-container">
+        <div class="footer-col">
+            <h3>DUR<span>KHOJ</span></h3>
+            <p>The smartest way to find and list homes in the Chitral Valley.</p>
+            <div class="social-links">
+                <a href="#"><i class="fab fa-facebook"></i></a>
+                <a href="#"><i class="fab fa-tiktok"></i></a>
+                <a href="#"><i class="fab fa-youtube"></i></a>
+            </div>
+        </div>
+        <div class="footer-col">
+            <h4>Quick Links</h4>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="browse.html">Browse Houses</a></li>
+                <li><a href="about.html">Our Mission</a></li>
+            </ul>
+        </div>
+        <div class="footer-col">
+            <h4>Contact</h4>
+            <p>Email: info@durkhoj.com</p>
+            <p>Chitral Town, KP, Pakistan</p>
+        </div>
+    </div>
+    <div class="footer-bottom">
+        <p>&copy; 2026 DUR KHOJ. Developed by Afan Ali Khan.</p>
+    </div>
+</footer>
+<script>
+    // --- Typing Effect ---
+    const textElement = document.getElementById("typing-text");
+    const phrases = ["Chitral Town.", "Balach.", "Singur.", "Booni."];
+    let pIdx = 0, cIdx = 0, isDeleting = false;
+    function type() {
+        const fullText = phrases[pIdx];
+        textElement.textContent = isDeleting ? fullText.substring(0, cIdx--) : fullText.substring(0, cIdx++);
+        let speed = isDeleting ? 100 : 150;
+        if (!isDeleting && cIdx === fullText.length + 1) { isDeleting = true; speed = 2000; }
+        else if (isDeleting && cIdx === 0) { isDeleting = false; pIdx = (pIdx + 1) % phrases.length; speed = 500; }
+        setTimeout(type, speed);
+    }
+    type();
+
+    
+    // --- HOUSE SOLD LOGIC ---
+    // This uses localStorage so the number stays even if you refresh the page
+    let count = localStorage.getItem('soldCount') || 0;
+    document.getElementById('sold-count').textContent = count;
+
+    function increaseSold() {
+        count++;
+        document.getElementById('sold-count').textContent = count;
+        localStorage.setItem('soldCount', count);
+    }
+</script>
+<script src="script.js"></script> 
+</body>
+</html>

@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Browse Homes | DUR KHOJ</title>
+    <link rel="stylesheet" href="style.css"> 
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+<script>
+    if (localStorage.getItem('theme') === 'dark') {
+        document.body.classList.add('dark-mode');
+    }
+</script>
+    <nav>
+    <a href="index.html" class="logo">
+        <img src="logo.jpg" alt="Logo"> DUR<span>KHOJ</span>
+    </a>
+    <div class="nav-right-section">
+        <button id="theme-toggle">🌙</button>
+        
+        <div class="menu-icon" id="mobile-menu-btn">
+            <i class="fas fa-bars" id="bar-icon"></i>
+            <i class="fas fa-times" id="close-icon" style="display:none;"></i>
+        </div>
+
+        <ul class="nav-links" id="nav-menu">
+    <li><a href="index.html">Home</a></li>
+    <li><a href="browse.html">Browse</a></li>
+    <li><a href="about.html">About</a></li>
+    
+    <li id="nav-auth-section">
+        <a href="signin.html" id="signin-link">Sign In</a>
+    </li>
+    
+    <li id="user-profile-section" class="nav-profile-container" style="display: none;">
+        <img src="profile-placeholder.png" alt="Profile" class="nav-profile-img" id="nav-avatar">
+        <div class="profile-dropdown" id="profile-dropdown">
+            <p class="user-name-display">Afan Ali Khan</p>
+            <hr>
+            <a href="#" id="logout-btn"><i class="fas fa-sign-out-alt"></i> Logout</a>
+        </div>
+    </li>
+</ul>
+    </div>
+</nav>
+
+    <main class="content-wrapper">
+        <section class="search-hero">
+            <h1>Find Your Next Home</h1>
+            <p>Search real-time listings across the Chitral Valley.</p>
+            
+            <div class="pro-search-container">
+                <div class="search-input-group">
+                    <i class="fas fa-search"></i>
+                    <input type="text" id="areaSearch" placeholder="Search Area (e.g. Balach, Singur)...">
+                </div>
+                <div class="search-input-group">
+                    <i class="fas fa-money-bill-wave"></i>
+                    <select id="priceLimit">
+                        <option value="all">Any Price</option>
+                        <option value="20000">Up to 20,000 PKR</option>
+                        <option value="50000">Up to 50,000 PKR</option>
+                        <option value="100000">Up to 100,000 PKR</option>
+                    </select>
+                </div>
+                <button class="main-search-btn">Search Now</button>
+            </div>
+        </section>
+
+        <div class="section-divider">
+            <span><i class="fas fa-info-circle"></i> FEATURED EXAMPLES</span>
+        </div>
+
+        <section class="property-grid" id="example-grid">
+            
+            <div class="property-card">
+                <div class="property-image" style="background-image: url('h1.jpg');">
+                    <span class="badge sale">FOR SALE</span>
+                </div>
+                <div class="property-details">
+                    <div class="price-row"><span class="price">Rs. 8,500,000</span></div>
+                    <h4>Modern Family Home</h4>
+                    <p class="location"><i class="fas fa-map-marker-alt"></i> Singur, Chitral</p>
+                    
+                    <div class="interaction-bar">
+                        <button class="action-btn like-btn"><i class="far fa-heart"></i> <span>42</span></button>
+                        <button class="action-btn comment-trigger"><i class="far fa-comment"></i> <span>8</span></button>
+                        <button class="action-btn share-trigger"><i class="fas fa-share"></i></button>
+                    </div>
+
+                    <div class="comment-section" style="display: none;">
+                        <div class="comment-input-wrapper">
+                            <input type="text" placeholder="Write a comment..." class="comment-input">
+                            <button class="send-comment-btn"><i class="fas fa-paper-plane"></i></button>
+                        </div>
+                    </div>
+                    <div class="share-menu" style="display: none;">
+                        <button class="share-opt link" onclick="copyLink(this)">Copy</button>
+                        <a href="#" class="share-opt wa">WhatsApp</a>
+                    </div>
+
+                    <button class="view-btn open-modal">View Details</button>
+                </div>
+            </div>
+
+            <div class="property-card">
+                <div class="property-image" style="background-image: url('h2.jpg');">
+                    <span class="badge rent">FOR RENT</span>
+                </div>
+                <div class="property-details">
+                    <div class="price-row"><span class="price">Rs. 55,000</span></div>
+                    <h4>Luxury Villa - Balach</h4>
+                    <p class="location"><i class="fas fa-map-marker-alt"></i> Balach, Chitral</p>
+                    
+                    <div class="interaction-bar">
+                        <button class="action-btn like-btn"><i class="far fa-heart"></i> <span>124</span></button>
+                        <button class="action-btn comment-trigger"><i class="far fa-comment"></i> <span>15</span></button>
+                        <button class="action-btn share-trigger"><i class="fas fa-share"></i></button>
+                    </div>
+
+                    <div class="comment-section" style="display: none;">
+                        <div class="comment-input-wrapper">
+                            <input type="text" placeholder="Write a comment..." class="comment-input">
+                            <button class="send-comment-btn"><i class="fas fa-paper-plane"></i></button>
+                        </div>
+                    </div>
+                    <div class="share-menu" style="display: none;">
+                        <button class="share-opt link" onclick="copyLink(this)">Copy</button>
+                        <a href="#" class="share-opt wa">WhatsApp</a>
+                    </div>
+
+                    <button class="view-btn open-modal">View Details</button>
+                </div>
+
+                <div class="house-card">
+    <div class="admin-badge" id="admin-tick-example" style="display: none;">
+        <i class="fas fa-check-circle"></i> Verified by Admin
+    </div>
+    
+            </div>
+
+        </section>
+
+        <div class="section-divider">
+            <span><i class="fas fa-bolt"></i> RECENT LISTINGS</span>
+        </div>
+        <section class="property-grid" id="real-listings"></section>
+
+        <section class="bottom-post-section">
+            <h2>Ready to find a tenant?</h2>
+            <p>Upload your house details and photos in less than 2 minutes.</p>
+            <a href="post.html" class="big-post-btn">Post Your House Now</a>
+        </section>
+    </main>
+
+    <div id="details-modal" class="modal">
+        <div class="modal-content">
+            <span class="close-modal">&times;</span>
+            <div id="modal-loader"></div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

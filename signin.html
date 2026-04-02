@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Sign In | DOR KHOJ</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body class="auth-page">
+    <script>
+    if (localStorage.getItem('theme') === 'dark') {
+        document.body.classList.add('dark-mode');
+    }
+</script>
+   <nav>
+    <a href="index.html" class="logo">
+        <img src="logo.jpg" alt="Logo"> DUR<span>KHOJ</span>
+    </a>
+    <div class="nav-right-section">
+        <button id="theme-toggle">🌙</button>
+        
+        <div class="menu-icon" id="mobile-menu-btn">
+            <i class="fas fa-bars" id="bar-icon"></i>
+            <i class="fas fa-times" id="close-icon" style="display:none;"></i>
+        </div>
+<ul class="nav-links" id="nav-menu">
+    <li><a href="index.html">Home</a></li>
+    <li><a href="browse.html">Browse</a></li>
+    <li><a href="about.html">About</a></li>
+    
+    <li id="nav-auth-section">
+        <a href="signin.html" id="signin-link">Sign In</a>
+    </li>
+    
+    <li id="user-profile-section" class="nav-profile-container" style="display: none;">
+        <img src="profile-placeholder.png" alt="Profile" class="nav-profile-img" id="nav-avatar">
+        <div class="profile-dropdown" id="profile-dropdown">
+            <p class="user-name-display">Afan Ali Khan</p>
+            <hr>
+            <a href="#" id="logout-btn"><i class="fas fa-sign-out-alt"></i> Logout</a>
+        </div>
+    </li>
+</ul>
+    </div>
+</nav>
+<div class="auth-container">
+    <div class="auth-box">
+        <div class="welcome-character">
+            <img src="character.png" alt="Welcome to Chitral" class="avatar-welcome">
+            <script src="https://accounts.google.com/gsi/client" async defer></script>
+
+<div id="g_id_onload"
+     data-client_id="YOUR_GOOGLE_CLIENT_ID.apps.googleusercontent.com"
+     data-callback="handleCredentialResponse">
+</div>
+<div class="g_id_signin" data-type="standard"></div>
+        </div>
+        
+        <h2>Welcome to DUR KHOJ</h2>
+        <p>Sign in to serve humanity and lead with excellence.</p>
+
+        <form id="loginForm">
+            <div class="input-group">
+                <label>Email Address</label>
+                <input type="email" id="email" placeholder="name@example.com" required>
+            </div>
+            
+            <div class="input-group">
+                <label>Password</label>
+                <input type="password" id="password" placeholder="••••••••" required>
+            </div>
+
+            <button type="submit" class="auth-submit">Login</button>
+        </form>
+
+        <div class="auth-footer">
+            <p>New to DUR KHOJ? <a href="register.html">Create an account</a></p>
+        </div>
+    </div>
+</div>
+<script src="script.js"></script> 
+</body>
+</html>

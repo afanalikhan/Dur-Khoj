@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About the Developer | DUR KHOJ</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <script>
+        if (localStorage.getItem('theme') === 'dark') {
+            document.body.classList.add('dark-mode');
+        }
+    </script>
+   
+    <nav>
+        <a href="index.html" class="logo">
+            <img src="logo.jpg" alt="Logo"> DUR<span>KHOJ</span>
+        </a>
+        <div class="nav-right-section">
+            <button id="theme-toggle">🌙</button>
+            <div class="menu-icon" id="mobile-menu-btn">
+                <i class="fas fa-bars" id="bar-icon"></i>
+                <i class="fas fa-times" id="close-icon" style="display:none;"></i>
+            </div>
+            <ul class="nav-links" id="nav-menu">
+    <li><a href="index.html">Home</a></li>
+    <li><a href="browse.html">Browse</a></li>
+    <li><a href="about.html">About</a></li>
+    
+    <li id="nav-auth-section">
+        <a href="signin.html" id="signin-link">Sign In</a>
+    </li>
+    
+    <li id="user-profile-section" class="nav-profile-container" style="display: none;">
+        <img src="profile-placeholder.png" alt="Profile" class="nav-profile-img" id="nav-avatar">
+        <div class="profile-dropdown" id="profile-dropdown">
+            <p class="user-name-display">Afan Ali Khan</p>
+            <hr>
+            <a href="#" id="logout-btn"><i class="fas fa-sign-out-alt"></i> Logout</a>
+        </div>
+    </li>
+</ul>
+        </div>
+    </nav>
+
+    <section class="about-hero">
+        <div class="hero-content">
+            <h1>Afan Ali Khan</h1>
+            <p>14-Year-Old Developer | Problem Solver | Community Leader</p>
+            <div class="hero-tags">
+                <span class="hero-tag">Mastuj, Chitral</span>
+                <span class="hero-tag">Next Gen Chitral (NGCO)</span>
+            </div>
+        </div>
+    </section>
+
+    <div class="about-container">
+        <div class="about-card">
+            <h2 class="about-section-title"><i class="fas fa-rocket"></i> My Journey</h2>
+            <p>I am a self-taught programmer from <strong>Mastuj, Chitral</strong>. Since the age of 11, I have been driven by a passion to use technology to help my community. I have mastered <strong>HTML, CSS, JavaScript, and SQL</strong> to build tools that solve real-world problems.</p>
+            
+            <div class="skills-grid">
+                <div class="skill-item"><i class="fab fa-js"></i> JavaScript</div>
+                <div class="skill-item"><i class="fas fa-code"></i> Web Design</div>
+                <div class="skill-item"><i class="fas fa-database"></i> SQL</div>
+                <div class="skill-item"><i class="fas fa-gamepad"></i> Game Dev</div>
+            </div>
+        </div>
+
+        <div class="about-card">
+            <h2 class="about-section-title"><i class="fas fa-hands-helping"></i> Community Impact</h2>
+            <p>I believe that leadership starts at home. Beyond building <strong>DUR KHOJ</strong>, I am an active volunteer at the local Jamatkhana and regularly lead environmental cleaning programs in Mastuj.</p>
+            
+            <div class="highlight-box">
+                <h4><i class="fas fa-lightbulb"></i> The Vision: Chitral Pride</h4>
+                <p>My dream is to establish <strong>Chitral Pride</strong>, an organization dedicated to identifying, mentoring, and providing guidance to talented students across the valley who lack access to international standards of education.</p>
+            </div>
+        </div>
+    </div>
+
+    <footer class="main-footer">
+        <div class="container footer-grid">
+            <div class="footer-col">
+                <div class="logo">DUR<span>KHOJ</span></div>
+                <p>The first digital housing platform in Chitral. Built to serve humanity through technology.</p>
+            </div>
+            <div class="footer-col">
+                <h4>Quick Links</h4>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="browse.html">Browse Houses</a></li>
+                    <li><a href="about.html">About Developer</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>Connect</h4>
+                <div class="footer-socials">
+                    <a href="#"><i class="fab fa-youtube"></i></a>
+                    <a href="#"><i class="fab fa-facebook"></i></a>
+                </div>
+                <p>info@durkhoj.com</p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 DUR KHOJ. Designed & Developed by Afan Ali Khan</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script> 
+</body>
+</html>

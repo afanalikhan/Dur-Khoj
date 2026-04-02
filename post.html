@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Post Property | DUR KHOJ</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body class="auth-page">
+    <script>
+    if (localStorage.getItem('theme') === 'dark') {
+        document.body.classList.add('dark-mode');
+    }
+</script>
+  <nav>
+    <a href="index.html" class="logo">
+        <img src="logo.jpg" alt="Logo"> DUR<span>KHOJ</span>
+    </a>
+    <div class="nav-right-section">
+        <button id="theme-toggle">🌙</button>
+        
+        <div class="menu-icon" id="mobile-menu-btn">
+            <i class="fas fa-bars" id="bar-icon"></i>
+            <i class="fas fa-times" id="close-icon" style="display:none;"></i>
+        </div>
+
+        <ul class="nav-links" id="nav-menu">
+    <li><a href="index.html">Home</a></li>
+    <li><a href="browse.html">Browse</a></li>
+    <li><a href="about.html">About</a></li>
+    
+    <li id="nav-auth-section">
+        <a href="signin.html" id="signin-link">Sign In</a>
+    </li>
+    
+    <li id="user-profile-section" class="nav-profile-container" style="display: none;">
+        <img src="profile-placeholder.png" alt="Profile" class="nav-profile-img" id="nav-avatar">
+        <div class="profile-dropdown" id="profile-dropdown">
+            <p class="user-name-display">Afan Ali Khan</p>
+            <hr>
+            <a href="#" id="logout-btn"><i class="fas fa-sign-out-alt"></i> Logout</a>
+        </div>
+    </li>
+</ul>
+</div>
+</nav>
+    <div class="auth-container">
+        <div class="auth-box" style="max-width: 600px;">
+            <h2>Post Your Property</h2>
+            <p>Fill in the details below to list your home in Chitral.</p>
+
+            <form id="propertyForm">
+                <div class="input-group">
+                    <label><i class="fas fa-tag"></i> Listing Type</label>
+                    <select id="listingType" class="auth-select" required>
+                        <option value="rent">For Rent</option>
+                        <option value="sale">For Sale</option>
+                    </select>
+                </div>
+
+                <div class="input-group">
+                    <label><i class="fas fa-phone"></i> Contact Phone Number</label>
+                    <input type="tel" id="sellerPhone" placeholder="03XX-XXXXXXX" required>
+                </div>
+
+                <div class="input-group">
+                    <label><i class="fas fa-map-marker-alt"></i> Area in Chitral</label>
+                    <select id="areaSelect" class="auth-select" onchange="checkArea(this)" required>
+                        <option value="">Select Area</option>
+                        <option value="balach">Balach</option>
+                        <option value="singur">Singur</option>
+                        <option value="town">Chitral Town</option>
+                        <option value="drosh">Drosh</option>
+                        <option value="booni">Booni</option>
+                        <option value="other">Other (Specify Below)</option>
+                    </select>
+                </div>
+
+                <div id="manualAreaBox" class="input-group" style="display: none;">
+                    <label>Specify Village/Area Name</label>
+                    <input type="text" id="manualAreaInput" placeholder="Enter village name">
+                </div>
+
+                <div class="input-group">
+                    <label><i class="fas fa-camera"></i> Upload Photos & Videos</label>
+                    <input type="file" id="propertyMedia" accept="image/*,video/*" multiple class="auth-input" style="padding: 10px;">
+                    <small style="color: #666;">You can select multiple files.</small>
+                </div>
+
+                <div class="input-group">
+                    <label><i class="fas fa-money-bill-wave"></i> Price (PKR)</label>
+                    <input type="number" id="price" placeholder="e.g. 25000" required>
+                </div>
+
+                <button type="submit" class="auth-submit">Post Listing Now</button>
+            </form>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
